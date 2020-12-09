@@ -1,0 +1,11 @@
+.home-button{
+    margin-top: 10%;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+button{
+    width: 200px;
+    margin: 3px;
+    border-radius: 20px;
+}
