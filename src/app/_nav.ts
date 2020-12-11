@@ -12,7 +12,7 @@ export const navItems: INavData[] = [
   },
   {
     name: 'Edit Profile',
-    url: '/theme/colors',
+    url: '/profile/editprofile',
     icon: 'icon-user'
   },
   {
