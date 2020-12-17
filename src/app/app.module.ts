@@ -41,7 +41,8 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
 import { HomeComponent } from './views/home/home/home.component';
-import { PricesComponent } from './views/prices/prices.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -56,7 +57,9 @@ import { PricesComponent } from './views/prices/prices.component';
     PerfectScrollbarModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    FormsModule,
+    HttpClientModule
   ],
   declarations: [
     AppComponent,
@@ -65,8 +68,7 @@ import { PricesComponent } from './views/prices/prices.component';
     P500Component,
     LoginComponent,
     RegisterComponent,
-    HomeComponent,
-    PricesComponent
+    HomeComponent
   ],
   providers: [{
     provide: LocationStrategy,
