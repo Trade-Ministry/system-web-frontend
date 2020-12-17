@@ -19,11 +19,8 @@
                       type="text"
                       class="form-control"
                       placeholder="NIC Number"
-                      autocomplete="nicnumber"
-                      id="nic"
                       name="nic"
-                      required
-                      [(ngModel)]="user.nicId"
+                      [(ngModel)]="user.nic"
                     />
                   </div>
                   <div class="input-group mb-4">
@@ -36,21 +33,15 @@
                       type="password"
                       class="form-control"
                       placeholder="Password"
-                      autocomplete="current-password"
-                      id="password"
                       name="password"
-                      required
                       [(ngModel)]="user.password"
                     />
                   </div>
                   <div class="row">
                     <div class="col-6">
-                      <a
-                        type="button"
-                        href="/#/dashboard"
-                        class="btn btn-primary px-4"
-                        >Login</a
-                      >
+                      <button type="submit" class="btn btn-primary px-4">
+                        Login
+                      </button>
                     </div>
                     <div class="col-6 text-right">
                       <button type="button" class="btn btn-link px-0">
