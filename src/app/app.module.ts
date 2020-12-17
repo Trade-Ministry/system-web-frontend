@@ -41,6 +41,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
 import { HomeComponent } from './views/home/home/home.component';
+import { PricesComponent } from './views/prices/prices.component';
 
 @NgModule({
   imports: [
@@ -64,7 +65,8 @@ import { HomeComponent } from './views/home/home/home.component';
     P500Component,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    PricesComponent
   ],
   providers: [{
     provide: LocationStrategy,
