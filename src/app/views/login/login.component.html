@@ -20,7 +20,10 @@
                       class="form-control"
                       placeholder="NIC Number"
                       autocomplete="nicnumber"
+                      id="nic"
+                      name="nic"
                       required
+                      [(ngModel)]="user.nicId"
                     />
                   </div>
                   <div class="input-group mb-4">
@@ -34,7 +37,10 @@
                       class="form-control"
                       placeholder="Password"
                       autocomplete="current-password"
+                      id="password"
+                      name="password"
                       required
+                      [(ngModel)]="user.password"
                     />
                   </div>
                   <div class="row">
