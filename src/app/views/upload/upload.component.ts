@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgxDropzonePreviewComponent } from 'ngx-dropzone';
 
 @Component({
   selector: 'app-upload',
@@ -12,14 +13,14 @@ export class UploadComponent {
 
   files: File[] = [];
 
-onSelect(event) {
-  console.log(event);
-  this.files.push(...event.addedFiles);
-}
+  onSelect(event) {
+    console.log(event);
+    this.files.push(...event.addedFiles);
+  }
 
-onRemove(event) {
-  console.log(event);
-  this.files.splice(this.files.indexOf(event), 1);
-}
+  onRemove(event) {
+    console.log(event);
+    this.files.splice(this.files.indexOf(event), 1);
+  }
 
 }

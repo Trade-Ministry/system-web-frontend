@@ -3,9 +3,9 @@ import { DOCUMENT } from '@angular/common';
 import { getStyle, rgbToHex } from '@coreui/coreui/dist/js/coreui-utilities';
 
 @Component({
-  templateUrl: 'colors.component.html'
+  templateUrl: 'profile.component.html'
 })
-export class ColorsComponent implements OnInit {
+export class ProfileComponent implements OnInit {
   constructor(@Inject(DOCUMENT) private _document: any) {}
 
   public themeColors(): void {

@@ -1,17 +1,21 @@
 <div class="animated fadeIn">
   <div class="card">
-    <div class="card-header"><i class="icon-cloud-upload"></i> Load Prices From Excel File</div>
+    <div class="card-header">
+      <i class="icon-cloud-upload"></i> Load Prices From Excel File
+    </div>
     <div class="card-body">
-        <ngx-dropzone (change)="onSelect($event)">
-          <ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
-          <ngx-dropzone-preview
-            *ngFor="let f of files"
-            [removable]="true"
-            (removed)="onRemove(f)"
-          >
-            <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
-          </ngx-dropzone-preview>
-        </ngx-dropzone>
+      <ngx-dropzone (change)="onSelect($event)">
+        <ngx-dropzone-label>Click here to add files</ngx-dropzone-label>
+        <ngx-dropzone-preview
+          *ngFor="let f of files"
+          [removable]="true"
+          (removed)="onRemove(f)"
+        >
+          <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+        </ngx-dropzone-preview>
+      </ngx-dropzone>
+      <br>
+      <button type="button" class="btn btn-success btn-lg btn-block">Upload Details</button>
     </div>
   </div>
 </div>
