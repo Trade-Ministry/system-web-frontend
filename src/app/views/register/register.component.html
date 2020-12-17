@@ -5,52 +5,52 @@
         <div class="col-md-6 mx-auto">
           <div class="card mx-4">
             <div class="card-body p-4">
-              <form>
+              <form #Registerform="ngForm" (ngSubmit)="registerUser()">
                 <h1>Register</h1>
                 <p class="text-muted">Create your account</p>
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fa fa-user-o fa-sm mt-1"></i></span>
                   </div>
-                  <input type="text" class="form-control" placeholder="Name" autocomplete="username" required>
+                  <input type="text" class="form-control" placeholder="Name" name="name" [(ngModel)]="user.name" required>
                 </div>
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-home"></i></span>
                   </div>
-                  <input type="text" class="form-control" placeholder="Company Name" autocomplete="companyname" required>
+                  <input type="text" class="form-control" placeholder="Company Name" name="company" [(ngModel)]="user.company" required>
                 </div>
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fa fa-address-card-o fa-sm mt-1"></i></span>
                   </div>
-                  <input type="text" class="form-control" placeholder="NIC Number" autocomplete="nicnumber" required>
+                  <input type="text" class="form-control" placeholder="NIC Number" name="nic" [(ngModel)]="user.nic" required>
                 </div>
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="cui-phone"></i></span>
                   </div>
-                  <input type="text" class="form-control" placeholder="Mobile Number" autocomplete="mobilenumber" required>
+                  <input type="text" class="form-control" placeholder="Mobile Number" name="mobile" [(ngModel)]="user.mobile" required>
                 </div>
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="cui-location-pin"></i></span>
                   </div>
-                  <input type="text" class="form-control" placeholder="City" autocomplete="city" required>
+                  <input type="text" class="form-control" placeholder="City" name="city" [(ngModel)]="user.city" required>
                 </div>
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-lock"></i></span>
                   </div>
-                  <input type="password" class="form-control" placeholder="Password" autocomplete="new-password" required>
+                  <input type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]="user.password" required>
                 </div>
                 <div class="input-group mb-4">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-lock"></i></span>
                   </div>
-                  <input type="password" class="form-control" placeholder="Repeat password" autocomplete="new-password" required>
+                  <input type="password" class="form-control" placeholder="Repeat password" name="cpassword" (ngModel)="user.password" required>
                 </div>
-                <a type="button" href="/#/login" class="btn btn-block btn-success">Create Account</a>
+                <button type="submit" class="btn btn-block btn-success">Create Account</button>
               </form>
             </div>
             <!-- <div class="card-footer p-4">
