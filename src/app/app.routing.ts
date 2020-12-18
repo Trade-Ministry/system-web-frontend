@@ -102,6 +102,10 @@ export const routes: Routes = [
       {
         path: 'enterprice',
         loadChildren: () => import('./views/prices/prices.module').then(m => m.PricesModule)
+      },
+      {
+        path: 'allprices',
+        loadChildren: () => import('./views/allprices/allprices.module').then(m => m.AllPricesModule)
       }
     ]
   },
