@@ -29,57 +29,53 @@ export const navItems: INavData[] = [
     url: '/enterprice',
     icon: 'fa fa-plus-square-o'
   },
-  {
-    name: 'Widgets',
-    url: '/widgets',
-    icon: 'icon-calculator',
-    badge: {
-      variant: 'info',
-      text: 'NEW'
-    }
-  },
+ {
+  name: 'Added Prices',
+  url: '/allprices',
+  icon: 'icon-list'
+ },
   {
     divider: true
   },
-  {
-    title: true,
-    name: 'Extras',
-  },
-  {
-    name: 'Pages',
-    url: '/pages',
-    icon: 'icon-star',
-    children: [
-      {
-        name: 'Login',
-        url: '/login',
-        icon: 'icon-star'
-      },
-      {
-        name: 'Register',
-        url: '/register',
-        icon: 'icon-star'
-      },
-      {
-        name: 'Error 404',
-        url: '/404',
-        icon: 'icon-star'
-      },
-      {
-        name: 'Error 500',
-        url: '/500',
-        icon: 'icon-star'
-      }
-    ]
-  },
-  {
-    name: 'Disabled',
-    url: '/dashboard',
-    icon: 'icon-ban',
-    badge: {
-      variant: 'secondary',
-      text: 'NEW'
-    },
-    attributes: { disabled: true },
-  }
+  // {
+  //   title: true,
+  //   name: 'Extras',
+  // },
+  // {
+  //   name: 'Pages',
+  //   url: '/pages',
+  //   icon: 'icon-star',
+  //   children: [
+  //     {
+  //       name: 'Login',
+  //       url: '/login',
+  //       icon: 'icon-star'
+  //     },
+  //     {
+  //       name: 'Register',
+  //       url: '/register',
+  //       icon: 'icon-star'
+  //     },
+  //     {
+  //       name: 'Error 404',
+  //       url: '/404',
+  //       icon: 'icon-star'
+  //     },
+  //     {
+  //       name: 'Error 500',
+  //       url: '/500',
+  //       icon: 'icon-star'
+  //     }
+  //   ]
+  // },
+  // {
+  //   name: 'Disabled',
+  //   url: '/dashboard',
+  //   icon: 'icon-ban',
+  //   badge: {
+  //     variant: 'secondary',
+  //     text: 'NEW'
+  //   },
+  //   attributes: { disabled: true },
+  // }
 ];
