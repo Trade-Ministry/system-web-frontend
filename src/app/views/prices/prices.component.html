@@ -4,54 +4,54 @@
       <i class="fa fa-plus-square-o"></i> Enter Price Details
     </div>
     <div class="card-body">
-
-        <form>
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text"><i class="icon-user"></i></span>
-              </div>
-              <input type="date" class="form-control" placeholder="Username" autocomplete="username" required>
-            </div>
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text"><i class="icon-user"></i></span>
-              </div>
-              <input type="time" class="form-control" placeholder="Email" autocomplete="email" required>
-            </div>
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text"><i class="icon-lock"></i></span>
-              </div>
-              <select class="form-control" name="category">
-                <option disabled>Select Category</option>
-                <option value="Vegetables">Vegetables</option>
-                <option value="Fruits">Fruits</option>
-                <option value="Grains">Grains</option>
-                <option value="Other">Other..</option>
-              </select>
-            </div>
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text"><i class="icon-lock"></i></span>
-              </div>
-              <input type="text" class="form-control" placeholder="Item" required>
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text"><i class="icon-lock"></i></span>
-                </div>
-                <input type="number" class="form-control" placeholder="Minimum Price(Rs.)" required>
-              </div>
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text"><i class="icon-lock"></i></span>
-                </div>
-                <input type="number" class="form-control" placeholder="Maximum Price(Rs.)" required>
-              </div>
-            <button type="submit" class="btn btn-block btn-success">Create Account</button>
-            <button type="reset" class="btn btn-block btn-danger">Clear</button>
-          </form>
-
+      <form>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-list-ul"></i></span>
+          </div>
+          <select class="form-control" name="category">
+            <option disabled>Select Category</option>
+            <option value="Vegetables">Vegetables</option>
+            <option value="Fruits">Fruits</option>
+            <option value="Grains">Grains</option>
+            <option value="Other">Other..</option>
+          </select>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-cubes"></i></span>
+          </div>
+          <input type="text" class="form-control" placeholder="Item" required />
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"
+              ><i class="fa fa-minus-square-o"></i
+            ></span>
+          </div>
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Minimum Price(Rs.) per 1kg"
+            required
+          />
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"
+              ><i class="fa fa-plus-square-o"></i
+            ></span>
+          </div>
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Maximum Price(Rs.) per 1kg"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-block btn-success">Add</button>
+        <button type="reset" class="btn btn-block btn-danger">Clear</button>
+      </form>
     </div>
   </div>
 </div>
