@@ -4,12 +4,12 @@
       <i class="fa fa-plus-square-o"></i> Enter Price Details
     </div>
     <div class="card-body">
-      <form>
+      <form #AddPriceform="ngForm" (ngSubmit)="addPrice()">
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="fa fa-list-ul"></i></span>
           </div>
-          <select class="form-control" name="category">
+          <select class="form-control" name="category" [(ngModel)]="products.category" required>
             <option disabled>Select Category</option>
             <option value="Vegetables">Vegetables</option>
             <option value="Fruits">Fruits</option>
@@ -21,7 +21,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="fa fa-cubes"></i></span>
           </div>
-          <input type="text" class="form-control" placeholder="Item" required />
+          <input type="text" class="form-control" name="item" placeholder="Item" [(ngModel)]="products.item" required />
         </div>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
@@ -30,9 +30,11 @@
             ></span>
           </div>
           <input
-            type="number"
+            type="text"
             class="form-control"
             placeholder="Minimum Price(Rs.) per 1kg"
+            name="minprice"
+            [(ngModel)]="products.minprice"
             required
           />
         </div>
@@ -43,9 +45,11 @@
             ></span>
           </div>
           <input
-            type="number"
+            type="text"
             class="form-control"
             placeholder="Maximum Price(Rs.) per 1kg"
+            name="maxprice"
+            [(ngModel)]="products.maxprice"
             required
           />
         </div>
