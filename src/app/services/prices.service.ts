@@ -15,7 +15,7 @@ export class PricesService {
   }
 
   public getProductsFromRemote(): Observable<any>{
-    return this._http.get<any>('http://localhost:8080/addprice');
+    return this._http.get<any>('http://localhost:8080/allprices');
   }
 
 }
