@@ -14,53 +14,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Vegetables</td>
-            <td>Cabbage</td>
-            <td>2020/12/18</td>
-            <td>10:00 AM</td>
-            <td>30.00</td>
-            <td>45.00</td>
-          </tr>
-          <tr>
-            <td>එළවළු</td>
-            <td>ගෝවා</td>
-            <td>2020/11/2</td>
-            <td>10:00 AM</td>
-            <td>40.00</td>
-            <td>45.00</td>
-          </tr>
-          <tr>
-            <td>එළවළු</td>
-            <td>මල්ගෝවා</td>
-            <td>2020/11/2</td>
-            <td>10:00 AM</td>
-            <td>60.00</td>
-            <td>70.00</td>
-          </tr>
-          <tr>
-            <td>එළවළු</td>
-            <td>රතුගෝවා</td>
-            <td>2020/11/2</td>
-            <td>10:00 AM</td>
-            <td>-</td>
-            <td>-</td>
-          </tr>
-          <tr>
-            <td>එළවළු</td>
-            <td>බෝංචි</td>
-            <td>2020/11/2</td>
-            <td>10:00 AM</td>
-            <td>75.00</td>
-            <td>80.00</td>
-          </tr>
-          <tr>
-            <td>එළවළු</td>
-            <td>ලීක්ස්</td>
-            <td>2020/11/2</td>
-            <td>10:00 AM</td>
-            <td>35.00</td>
-            <td>40.00</td>
+          <tr *ngFor="let products of _productlist">
+            <td>{{products.category}}</td>
+            <td>{{products.item}}</td>
+            <td>{{products.date}}</td>
+            <td>{{products.time}}</td>
+            <td>{{products.minprice}}</td>
+            <td>{{products.maxprice}}</td>
           </tr>
         </tbody>
       </table>
