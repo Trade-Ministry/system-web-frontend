@@ -4,18 +4,20 @@
       <i class="icon-cloud-upload"></i> Load Prices From Excel File
     </div>
     <div class="card-body">
-      <ngx-dropzone (change)="onSelect($event)">
+      <form action="">
+      <ngx-dropzone (change)="onSelect($event)" [accept]="'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'" [multiple]="false">
         <ngx-dropzone-label>Click here to add files</ngx-dropzone-label>
         <ngx-dropzone-preview
           *ngFor="let f of files"
           [removable]="true"
           (removed)="onRemove(f)"
         >
-          <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+          <ngx-dropzone-label>{{ f.name }}</ngx-dropzone-label>
         </ngx-dropzone-preview>
       </ngx-dropzone>
       <br>
       <a type="button" href="/#/allprices" class="btn btn-success btn-lg btn-block">Upload Details</a>
+      </form>
     </div>
   </div>
 </div>
