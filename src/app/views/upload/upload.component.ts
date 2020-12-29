@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgxDropzonePreviewComponent } from 'ngx-dropzone';
 
 @Component({
@@ -8,14 +10,23 @@ import { NgxDropzonePreviewComponent } from 'ngx-dropzone';
 })
 export class UploadComponent {
 
-  constructor() { }
-
-
   files: File[] = [];
+
+  constructor(private http: HttpClient, private _router: Router) { }
 
   onSelect(event) {
     console.log(event);
     this.files.push(...event.addedFiles);
+
+    const formData = new FormData();
+
+    formData.append('file', this.files[0]);
+
+    this.http.post('http://localhost:8080/upload', formData).subscribe(res => {
+      console.log(res);
+      this._router.navigate(['/allprices']);
+    });
+
   }
 
   onRemove(event) {
