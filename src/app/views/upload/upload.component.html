@@ -4,7 +4,6 @@
       <i class="icon-cloud-upload"></i> Load Prices From Excel File
     </div>
     <div class="card-body">
-      <form action="">
       <ngx-dropzone (change)="onSelect($event)" [accept]="'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'" [multiple]="false">
         <ngx-dropzone-label>Click here to add files</ngx-dropzone-label>
         <ngx-dropzone-preview
@@ -16,8 +15,7 @@
         </ngx-dropzone-preview>
       </ngx-dropzone>
       <br>
-      <a type="button" href="/#/allprices" class="btn btn-success btn-lg btn-block">Upload Details</a>
-      </form>
+      <button type="button" value="upload" (click)="onUpload()" class="btn btn-success btn-lg btn-block">Upload Details</button>
     </div>
   </div>
 </div>
