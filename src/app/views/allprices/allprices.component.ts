@@ -1,7 +1,9 @@
 import { NgForOf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { NgModel } from '@angular/forms';
 import { PricesService } from '../../services/prices.service';
 import { Products } from '../../services/products';
+
 
 @Component({
   selector: 'app-allprices',

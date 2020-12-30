@@ -2,6 +2,14 @@
   <div class="card">
     <div class="card-header"><i class="icon-list"></i> All Price Details</div>
     <div class="card-body">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text"
+            ><i class="cui-magnifying-glass"></i
+          ></span>
+        </div>
+        <input type="text" class="form-control" placeholder="Search by Category, Item, Date, Time or Price" [(ngModel)]="term" />
+      </div>
       <table class="table">
         <thead>
           <tr>
@@ -14,18 +22,21 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let products of pageOfItems">
-            <td>{{products.category}}</td>
-            <td>{{products.item}}</td>
-            <td>{{products.date}}</td>
-            <td>{{products.time}}</td>
-            <td>{{products.minPrice}}</td>
-            <td>{{products.maxPrice}}</td>
+          <tr *ngFor="let products of pageOfItems | filter: term">
+            <td>{{ products.category }}</td>
+            <td>{{ products.item }}</td>
+            <td>{{ products.date }}</td>
+            <td>{{ products.time }}</td>
+            <td>{{ products.minPrice }}</td>
+            <td>{{ products.maxPrice }}</td>
           </tr>
         </tbody>
       </table>
       <ul class="pagination">
-        <jw-pagination [items]="_productlist" (changePage)="onChangePage($event)"></jw-pagination>
+        <jw-pagination
+          [items]="_productlist"
+          (changePage)="onChangePage($event)"
+        ></jw-pagination>
         <!-- <li class="page-item"><a class="page-link" href="#">Prev</a></li>
         <li class="page-item active">
           <a class="page-link" href="#">1</a>
