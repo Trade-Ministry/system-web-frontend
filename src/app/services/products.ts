@@ -4,8 +4,8 @@ export class Products {
     date: string;
     time: string;
     item: string;
-    minprice: number;
-    maxprice: number;
+    minPrice: number;
+    maxPrice: number;
 
     constructor() {}
 }
