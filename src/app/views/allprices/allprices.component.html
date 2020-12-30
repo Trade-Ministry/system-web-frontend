@@ -14,7 +14,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let products of _productlist">
+          <tr *ngFor="let products of pageOfItems">
             <td>{{products.category}}</td>
             <td>{{products.item}}</td>
             <td>{{products.date}}</td>
@@ -25,14 +25,15 @@
         </tbody>
       </table>
       <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+        <jw-pagination [items]="_productlist" (changePage)="onChangePage($event)"></jw-pagination>
+        <!-- <li class="page-item"><a class="page-link" href="#">Prev</a></li>
         <li class="page-item active">
           <a class="page-link" href="#">1</a>
         </li>
         <li class="page-item"><a class="page-link" href="/#/allprices">2</a></li>
         <li class="page-item"><a class="page-link" href="/#/allprices">3</a></li>
         <li class="page-item"><a class="page-link" href="/#/allprices">4</a></li>
-        <li class="page-item"><a class="page-link" href="/#/allprices">Next</a></li>
+        <li class="page-item"><a class="page-link" href="/#/allprices">Next</a></li> -->
       </ul>
     </div>
   </div>

@@ -11,6 +11,8 @@ import { Products } from '../../services/products';
 export class AllpricesComponent implements OnInit {
 
   _productlist: Products[];
+  pageOfItems: Array<Products>;
+
   constructor(private _service: PricesService) { }
 
   ngOnInit(): void {
@@ -21,6 +23,10 @@ export class AllpricesComponent implements OnInit {
     },
       error => console.log('Error occured')
     );
+  }
+
+  onChangePage(pageOfItems: Array<Products>) {
+    this.pageOfItems = pageOfItems;
   }
 
 }

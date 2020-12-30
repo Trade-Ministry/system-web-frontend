@@ -4,6 +4,8 @@ import { AllpricesComponent } from './allprices.component';
 import { AllPricesRoutingModule } from './allprices-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { JwPaginationComponent } from 'jw-angular-pagination';
+
 
 
 @NgModule({
@@ -12,6 +14,8 @@ import { CommonModule } from '@angular/common';
     HttpClientModule,
     CommonModule
   ],
-  declarations: [ AllpricesComponent ]
+  declarations: [
+    AllpricesComponent,
+    JwPaginationComponent]
 })
 export class AllPricesModule { }
