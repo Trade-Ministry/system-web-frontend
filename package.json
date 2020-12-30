@@ -45,6 +45,7 @@
     "core-js": "^3.6.5",
     "flag-icon-css": "^3.5.0",
     "font-awesome": "^4.7.0",
+    "jw-angular-pagination": "^1.2.0",
     "moment": "^2.27.0",
     "mutationobserver-shim": "^0.3.7",
     "ng2-charts": "^2.3.2",
