@@ -5,6 +5,7 @@ import { User } from '../../services/user';
 import { RegistrationService } from '../../services/registration.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 
 @Component({
@@ -16,10 +17,15 @@ export class ProfileComponent implements OnInit {
   users = new User();
   message = '';
 
-  constructor(private _service: RegistrationService, private _router: Router) {}
+  constructor(private _service: RegistrationService, private _router: Router, private spinner: NgxSpinnerService) {}
 
 
   updateUser() {
+    this.spinner.show();
+    setTimeout(() => {
+      /** spinner ends after 8 seconds */
+      this.spinner.hide();
+    }, 8000);
     this._service.updateUserFromRemote(this.users).subscribe(
       data => {
         console.log('Response Received');
