@@ -18,4 +18,12 @@ export class RegistrationService {
     return this._http.post<any>('http://localhost:8080/registeruser', user);
   }
 
+  public getUserFromRemote(): Observable<any> {
+    return this._http.get<any>('http://localhost:8080/getuser');
+  }
+
+  public updateUserFromRemote(user: User): Observable<any> {
+    return this._http.put<any>('http://localhost:8080/updateuser', user);
+  }
+
 }
