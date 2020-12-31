@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { RegistrationService } from '../../services/registration.service';
 import { User } from '../../services/user';
 
@@ -15,9 +16,10 @@ export class RegisterComponent {
   user = new User();
   message = '';
 
-  constructor(private _service: RegistrationService, private _router: Router) { }
+  constructor(private _service: RegistrationService, private _router: Router, private spinner: NgxSpinnerService) { }
 
   registerUser() {
+    this.spinner.show();
     this._service.registerUserFromRemote(this.user).subscribe(
       data => {
         console.log('Response received');
@@ -29,6 +31,7 @@ export class RegisterComponent {
         this.message = 'Error';
       }
     );
+    this.spinner.hide();
   }
 
 }
