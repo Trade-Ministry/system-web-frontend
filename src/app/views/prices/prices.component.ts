@@ -30,14 +30,14 @@ export class PricesComponent implements OnInit {
 
   addPrice() {
     this.spinner.show();
-    setTimeout(() => {
-      /** spinner ends after 5 seconds */
-      this.spinner.hide();
-    }, 8000);
     this._service.addProductFromRemote(this.products).subscribe(
       data => {
         console.log('Respose received');
         this.message = 'Price added successfully';
+        setTimeout(() => {
+          /** spinner ends after 8 seconds */
+          this.spinner.hide();
+        }, 8000);
         this._router.navigate(['/allprices']);
       },
       error => {
