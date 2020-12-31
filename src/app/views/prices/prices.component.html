@@ -9,7 +9,10 @@
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="fa fa-list-ul"></i></span>
           </div>
-          <select class="form-control" name="category" [(ngModel)]="products.category" required>
+          <ng-select class="form-control" placeholder="Category: " name="category" [(ngModel)]="products.category">
+            <ng-option *ngFor="let cat of categories" [value]="cat.val">{{cat.name}}</ng-option>
+         </ng-select>
+          <!-- <select class="form-control" name="category" [(ngModel)]="products.category" required>
             <option value="" disabled selected>Select Category</option>
             <option value="එළවළු">Vegetables(එළවළු)</option>
             <option value="පළතුරු">Fruits(පළතුරු)</option>
@@ -17,7 +20,7 @@
             <option value="පලාවර්ග">Leafy Greens(පලාවර්ග)</option>
             <option value="අලවර්ග">Yams(අලවර්ග)</option>
             <option value="අනෙකුත්">Other(අනෙකුත්)..</option>
-          </select>
+          </select> -->
         </div>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
