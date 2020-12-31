@@ -19,14 +19,18 @@ export class UploadComponent {
     console.log(event);
     this.files.push(...event.addedFiles);
     this.spinner.show();
+
     const formData = new FormData();
 
     formData.append('file', this.files[0]);
 
     this.http.post('http://localhost:8080/upload', formData).subscribe(res => {
       console.log(res);
+      setTimeout(() => {
+        /** spinner ends after 5 seconds */
+        this.spinner.hide();
+      }, 8000);
       this._router.navigate(['/allprices']);
-      this.spinner.hide();
     });
 
   }
