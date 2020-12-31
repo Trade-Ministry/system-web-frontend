@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { PricesComponent } from './prices.component';
 import { PricesRoutingModule } from './prices-routing.module';
@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { CommonModule } from '@angular/common';
 import { NgOptionHighlightModule } from '@ng-select/ng-option-highlight';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   imports: [
@@ -15,8 +16,10 @@ import { NgOptionHighlightModule } from '@ng-select/ng-option-highlight';
     HttpClientModule,
     NgSelectModule,
     CommonModule,
-    NgOptionHighlightModule
+    NgOptionHighlightModule,
+    NgxSpinnerModule
   ],
-  declarations: [ PricesComponent ]
+  declarations: [ PricesComponent ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
 })
 export class PricesModule { }
