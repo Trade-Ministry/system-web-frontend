@@ -7,11 +7,15 @@ import { TypographyComponent } from './typography.component';
 
 // Theme Routing
 import { ThemeRoutingModule } from './profile-routing.module';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
-    ThemeRoutingModule
+    ThemeRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   declarations: [
     ProfileComponent,
