@@ -215,19 +215,24 @@ export class DashboardComponent implements OnInit {
   public mainChartData1: Array<number> = [];
   public mainChartData2: Array<number> = [];
   public mainChartData3: Array<number> = [];
+  public mainChartData4: Array<number> = [];
 
   public mainChartData: Array<any> = [
     {
       data: this.mainChartData1,
-      label: 'Current'
+      label: 'අලවර්ග'
     },
     {
       data: this.mainChartData2,
-      label: 'Previous'
+      label: 'එළවළු'
     },
     {
       data: this.mainChartData3,
-      label: 'BEP'
+      label: 'පළතුරු'
+    },
+    {
+      data: this.mainChartData4,
+      label: 'ධාන්‍යය'
     }
   ];
   /* tslint:disable:max-line-length */
@@ -263,8 +268,8 @@ export class DashboardComponent implements OnInit {
         ticks: {
           beginAtZero: true,
           maxTicksLimit: 5,
-          stepSize: Math.ceil(250 / 5),
-          max: 250
+          stepSize: Math.ceil(200 / 4),
+          max: 200
         }
       }]
     },
@@ -297,9 +302,12 @@ export class DashboardComponent implements OnInit {
     { // brandDanger
       backgroundColor: 'transparent',
       borderColor: getStyle('--danger'),
-      pointHoverBackgroundColor: '#fff',
-      borderWidth: 1,
-      borderDash: [8, 5]
+      pointHoverBackgroundColor: '#fff'
+    },
+    { // brandDanger
+      backgroundColor: 'transparent',
+      borderColor: getStyle('--warning'),
+      pointHoverBackgroundColor: '#fff'
     }
   ];
   public mainChartLegend = false;
@@ -380,9 +388,10 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     // generate random values for mainChart
     for (let i = 0; i <= this.mainChartElements; i++) {
-      this.mainChartData1.push(this.random(50, 200));
+      this.mainChartData1.push(this.random(50, 150));
       this.mainChartData2.push(this.random(80, 100));
-      this.mainChartData3.push(65);
+      this.mainChartData3.push(this.random(65, 110));
+      this.mainChartData4.push(this.random(30, 140));
     }
   }
 }
