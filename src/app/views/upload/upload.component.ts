@@ -27,7 +27,7 @@ export class UploadComponent {
     this.http.post('http://localhost:8080/upload', formData).subscribe(res => {
       console.log(res);
       setTimeout(() => {
-        /** spinner ends after 5 seconds */
+        /** spinner ends after 8 seconds */
         this.spinner.hide();
       }, 8000);
       this._router.navigate(['/allprices']);

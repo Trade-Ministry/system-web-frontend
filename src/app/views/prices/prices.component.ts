@@ -22,7 +22,10 @@ export class PricesComponent implements OnInit {
     { id: 3, val: 'ධාන්‍යය', name: 'Grains(ධාන්‍යය)' },
     { id: 4, val: 'පලාවර්ග', name: 'Leafy Greens(පලාවර්ග)' },
     { id: 5, val: 'අලවර්ග', name: 'Yams(අලවර්ග)' },
-    { id: 6, val: 'අනෙකුත්', name: 'Other(අනෙකුත්)..' },
+    { id: 6, val: 'කරවල', name: 'Maldive Fish(කරවල)' },
+    { id: 7, val: 'මස්', name: 'Meat(මස්)' },
+    { id: 8, val: 'මාළු', name: 'Fish(මාළු)' },
+    { id: 9, val: 'අනෙකුත්', name: 'Other(අනෙකුත්)..' },
   ];
 
   constructor(private _service: PricesService, private _router: Router, private spinner: NgxSpinnerService) { }
@@ -34,10 +37,7 @@ export class PricesComponent implements OnInit {
       data => {
         console.log('Respose received');
         this.message = 'Price added successfully';
-        setTimeout(() => {
-          /** spinner ends after 8 seconds */
-          this.spinner.hide();
-        }, 8000);
+        this.spinner.hide();
         this._router.navigate(['/allprices']);
       },
       error => {
