@@ -25,7 +25,7 @@ export class RegisterComponent {
         console.log('Response received');
         this.message = 'Registration Succussful';
         setTimeout(() => {
-          /** spinner ends after 5 seconds */
+          /** spinner ends after 8 seconds */
           this.spinner.hide();
         }, 8000);
         this._router.navigate(['/login']);
