@@ -18,4 +18,12 @@ export class PricesService {
     return this._http.get<any>('http://localhost:8080/allprices');
   }
 
+  public getCategoriesFromRemote(): Observable<any> {
+    return this._http.get<any>('http://localhost:8080/getCategories');
+  }
+
+  public findAveragePriceFromRemote(date: Date, category: String): Observable<any> {
+    return this._http.get<any>('http://localhost:8080/' + date + '/' + category);
+  }
+
 }
