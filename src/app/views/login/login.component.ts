@@ -13,6 +13,7 @@ export class LoginComponent {
 
   user = new User();
   message = '';
+  invalidLogin = false;
   constructor(private _service: RegistrationService, private _router: Router) { }
 
   loginUser() {
@@ -20,10 +21,12 @@ export class LoginComponent {
       data => {
         console.log('Response recieved');
         this._router.navigate(['/dashboard']);
+        this.invalidLogin = false;
       },
       error => {
         console.log('Error occured');
         this.message = 'Bad Creadentials';
+        this.invalidLogin = true;
       }
     );
   }
