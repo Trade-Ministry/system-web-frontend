@@ -225,19 +225,23 @@ export class DashboardComponent implements OnInit {
   public mainChartData: Array<any> = [
     {
       data: this.mainChartData1,
-      label: 'අලවර්ග'
+      label: 'අලවර්ග',
+      lineTension: 0
     },
     {
       data: this.mainChartData2,
-      label: 'එළවළු'
+      label: 'එළවළු',
+      lineTension: 0
     },
     {
       data: this.mainChartData3,
-      label: 'පළතුරු'
+      label: 'පළතුරු',
+      lineTension: 0
     },
     {
       data: this.mainChartData4,
-      label: 'ධාන්‍යය'
+      label: 'ධාන්‍යය',
+      lineTension: 0
     }
   ];
   /* tslint:disable:max-line-length */

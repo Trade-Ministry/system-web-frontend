@@ -1,1 +1,25 @@
-<p>scanqr works!</p>
+<div class="animated fadeIn">
+    <div class="card">
+      <div class="card-header">
+        <i class="fa fa-qrcode"></i> Scan QR Code For Add Prices
+      </div>
+      <div class="card-body">
+        <input type="file" #file name="file" id="file" (change)="preview(file.files)">  
+        <ng2-qrcode-reader (result)="render($event)" [qrr-show]="showQRCode" [qrr-value]="value" [qrr-type]="elementType">  
+        </ng2-qrcode-reader><br>  
+        <div #result></div>
+        <!-- <ngx-dropzone (change)="onSelect($event)" [accept]="'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'" [multiple]="false">
+          <ngx-dropzone-label>Click here to add QR</ngx-dropzone-label>
+          <ngx-dropzone-preview
+            *ngFor="let f of files"
+            [removable]="true"
+            (removed)="onRemove(f)"
+          >
+            <ngx-dropzone-label>{{ f.name }}</ngx-dropzone-label>
+          </ngx-dropzone-preview>
+        </ngx-dropzone> -->
+        <br>
+        <!-- <button type="button" value="upload" (click)="onUpload()" class="btn btn-success btn-lg btn-block">Upload Details</button> -->
+      </div>
+    </div>
+  </div>  
