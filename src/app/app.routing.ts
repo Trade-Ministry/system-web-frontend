@@ -106,6 +106,10 @@ export const routes: Routes = [
       {
         path: 'allprices',
         loadChildren: () => import('./views/allprices/allprices.module').then(m => m.AllPricesModule)
+      },
+      {
+        path: 'scan',
+        loadChildren: () => import('./views/scanqr/scanqr.module').then(m => m.ScanqrModule)
       }
     ]
   },
