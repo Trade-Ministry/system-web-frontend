@@ -25,6 +25,11 @@ export const navItems: INavData[] = [
     icon: 'icon-cloud-upload'
   },
   {
+    name: 'Scan QR Code',
+    url: '/scan',
+    icon: 'fa fa-qrcode'
+  },
+  {
     name: 'Add Prices',
     url: '/enterprice',
     icon: 'fa fa-plus-square-o'
