@@ -40,6 +40,23 @@ export class ScanqrComponent implements OnInit {
   render(e) {
     const element: Element = this.renderer.createElement('h1');
     element.innerHTML = e.result;
+    const ks = e.result.split('\n');
+    let category = '';
+    let item = '';
+
+    for ( let i = 0 ; i <= 1 ; i++) {
+
+      if (ks[i].indexOf('Category') > -1) {
+        category = ks[i].split('Category:');
+      } else if (ks[i].indexOf('Item') > -1) {
+        item = ks[i].split('Item:');
+      }
+    }
+
+    const cat = category[1];
+    const itm = item[1];
+    console.log(cat);
+    console.log(itm);
     this.renderElement(element);
   }
 
