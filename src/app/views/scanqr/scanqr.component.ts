@@ -1,4 +1,9 @@
+import { NgForOf } from '@angular/common';
 import { Component, OnInit, ElementRef, ViewChild, Renderer2 } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-scanqr',
@@ -39,6 +44,7 @@ export class ScanqrComponent implements OnInit {
 
   render(e) {
     const element: Element = this.renderer.createElement('h1');
+    const inp: Element = this.renderer.createElement('input');
     element.innerHTML = e.result;
     const ks = e.result.split('\n');
     let category = '';

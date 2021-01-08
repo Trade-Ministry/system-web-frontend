@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ScanqrComponent } from './scanqr.component';
 import { NgQRCodeReaderModule } from 'ng2-qrcode-reader';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { NgQRCodeReaderModule } from 'ng2-qrcode-reader';
     CommonModule,
     HttpClientModule,
     NgxSpinnerModule,
-    NgQRCodeReaderModule
+    NgQRCodeReaderModule,
+    FormsModule
   ],
   declarations: [ ScanqrComponent ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
