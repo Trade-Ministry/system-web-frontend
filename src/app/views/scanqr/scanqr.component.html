@@ -20,9 +20,11 @@
       </ng2-qrcode-reader
       ><br />
       <div #result></div>
-
       <div *ngIf="formDiv" class="card-body">
-        <form #AddPriceform="ngForm" (ngSubmit)="addPrice()" [formGroup]="fillQR">
+        <form (ngSubmit)="addPrice()" [formGroup]="fillQR">
+          <!-- <input type="checkbox" name="check1" (change)="copyTextValue(this.form);">
+      <input type="text" id="category" name="category" [(ngModel)]="products.category">
+      <input type="text" id="item" name="item" [(ngModel)]="products.item"> -->
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text"
@@ -32,8 +34,7 @@
             <input
               type="text"
               class="form-control"
-              name="category"
-              formControlName="categories"
+              formControlName="category"
               required
             />
           </div>
@@ -44,8 +45,7 @@
             <input
               type="text"
               class="form-control"
-              name="item"
-              formControlName="items"
+              formControlName="item"
               required
             />
           </div>
@@ -59,8 +59,7 @@
               type="number"
               class="form-control"
               placeholder="Minimum Price(Rs.) per 1kg"
-              name="minprice"
-              [(ngModel)]="products.minPrice"
+              formControlName="minprice"
               required
             />
           </div>
@@ -74,8 +73,7 @@
               type="number"
               class="form-control"
               placeholder="Maximum Price(Rs.) per 1kg"
-              name="maxprice"
-              [(ngModel)]="products.maxPrice"
+              formControlName="maxprice"
               required
             />
           </div>

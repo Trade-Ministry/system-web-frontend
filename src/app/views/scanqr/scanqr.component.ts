@@ -1,6 +1,6 @@
 import { NgForOf, NgIf } from '@angular/common';
 import { Component, OnInit, ElementRef, ViewChild, Renderer2 } from '@angular/core';
-import { FormBuilder, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { PricesService } from '../../services/prices.service';
@@ -16,6 +16,7 @@ export class ScanqrComponent implements OnInit {
 
   title = 'reading-qrcode';
   products = new Products();
+  userForm: FormGroup;
   message = '';
   fillQR;
   formDiv: boolean = false;
@@ -26,12 +27,24 @@ export class ScanqrComponent implements OnInit {
   showQRCode: boolean = false;
 
   constructor(private renderer: Renderer2, private _service: PricesService, private _router: Router,
-    private spinner: NgxSpinnerService, private formBuilder: FormBuilder) { }
+    private spinner: NgxSpinnerService, public formBuilder: FormBuilder) {
+     }
 
 
   addPrice() {
-    this.spinner.show();
-    this._service.addProductFromRemote(this.products).subscribe(
+    console.log(this.fillQR.get('category').value);
+    const formData: any = new FormData();
+    console.log('working');
+
+    formData.append('products.category', this.fillQR.get('category').value);
+    formData.append('products.item', this.fillQR.get('item').value);
+    formData.append('products.minPrice', this.fillQR.get('minprice').value);
+    formData.append('products.maxPrice', this.fillQR.get('maxprice').value);
+
+    console.log(formData);
+    console.log('working');
+
+    this._service.addProductFromRemote(formData).subscribe(
       data => {
         console.log('Respose received');
         this.message = 'Price added successfully';
@@ -48,6 +61,7 @@ export class ScanqrComponent implements OnInit {
   viewForm() {
     this.formDiv = true;
   }
+
 
   preview(files) {
     if ( files.length === 0 ) {
@@ -93,8 +107,10 @@ export class ScanqrComponent implements OnInit {
     console.log(itm);
 
     this.fillQR = this.formBuilder.group({
-      categories: [cat, [Validators.required]],
-      items: [itm, [Validators.required]]
+      category: [cat, [Validators.required]],
+      item: [itm, [Validators.required]],
+      minprice: ['', [Validators.required]],
+      maxprice: ['', [Validators.required]]
     });
 
     this.renderElement(element);
