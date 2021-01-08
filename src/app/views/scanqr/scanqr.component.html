@@ -21,8 +21,8 @@
       ><br />
       <div #result></div>
 
-      <div class="card-body">
-        <form #AddPriceform="ngForm" (ngSubmit)="addPrice()">
+      <div *ngIf="formDiv" class="card-body">
+        <form #AddPriceform="ngForm" (ngSubmit)="addPrice()" [formGroup]="fillQR">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text"
@@ -33,6 +33,7 @@
               type="text"
               class="form-control"
               name="category"
+              formControlName="categories"
               required
             />
           </div>
@@ -44,6 +45,7 @@
               type="text"
               class="form-control"
               name="item"
+              formControlName="items"
               required
             />
           </div>
@@ -58,6 +60,7 @@
               class="form-control"
               placeholder="Minimum Price(Rs.) per 1kg"
               name="minprice"
+              [(ngModel)]="products.minPrice"
               required
             />
           </div>
@@ -72,6 +75,7 @@
               class="form-control"
               placeholder="Maximum Price(Rs.) per 1kg"
               name="maxprice"
+              [(ngModel)]="products.maxPrice"
               required
             />
           </div>

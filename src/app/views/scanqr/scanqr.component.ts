@@ -1,8 +1,10 @@
-import { NgForOf } from '@angular/common';
+import { NgForOf, NgIf } from '@angular/common';
 import { Component, OnInit, ElementRef, ViewChild, Renderer2 } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import { NgxSpinnerService } from 'ngx-spinner';
+import { PricesService } from '../../services/prices.service';
+import { Products } from '../../services/products';
 
 
 @Component({
@@ -13,13 +15,39 @@ import { Router } from '@angular/router';
 export class ScanqrComponent implements OnInit {
 
   title = 'reading-qrcode';
+  products = new Products();
+  message = '';
+  fillQR;
+  formDiv: boolean = false;
   elementType = 'url';
   public imagePath;
   value: any;
   @ViewChild('result') resultElement: ElementRef;
   showQRCode: boolean = false;
 
-  constructor(private renderer: Renderer2) { }
+  constructor(private renderer: Renderer2, private _service: PricesService, private _router: Router,
+    private spinner: NgxSpinnerService, private formBuilder: FormBuilder) { }
+
+
+  addPrice() {
+    this.spinner.show();
+    this._service.addProductFromRemote(this.products).subscribe(
+      data => {
+        console.log('Respose received');
+        this.message = 'Price added successfully';
+       this.spinner.hide();
+        this._router.navigate(['/allprices']);
+      },
+      error => {
+        console.log('Exception occured');
+        this.message = 'Error';
+      }
+    );
+  }
+
+  viewForm() {
+    this.formDiv = true;
+  }
 
   preview(files) {
     if ( files.length === 0 ) {
@@ -63,6 +91,12 @@ export class ScanqrComponent implements OnInit {
     const itm = item[1];
     console.log(cat);
     console.log(itm);
+
+    this.fillQR = this.formBuilder.group({
+      categories: [cat, [Validators.required]],
+      items: [itm, [Validators.required]]
+    });
+
     this.renderElement(element);
   }
 
@@ -71,6 +105,7 @@ export class ScanqrComponent implements OnInit {
       this.renderer.removeChild(this.resultElement.nativeElement, node);
     }
     this.renderer.appendChild(this.resultElement.nativeElement, element);
+    this.viewForm();
   }
 
   ngOnInit(): void {
