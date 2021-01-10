@@ -74,6 +74,7 @@ export class ScanqrComponent implements OnInit {
   }
 
   render(e) {
+    this.spinner.show();
     const element: Element = this.renderer.createElement('h1');
     const inp: Element = this.renderer.createElement('input');
     element.innerHTML = e.result;
@@ -104,6 +105,7 @@ export class ScanqrComponent implements OnInit {
     });
 
     this.renderElement(element);
+    this.spinner.hide();
   }
 
   renderElement(element) {
