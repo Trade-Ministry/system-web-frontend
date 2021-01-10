@@ -31,32 +31,21 @@ export class ScanqrComponent implements OnInit {
      }
 
 
-  addPrice() {
-    console.log(this.fillQR.get('category').value);
-    const formData: any = new FormData();
-    console.log('working');
-
-    formData.append('products.category', this.fillQR.get('category').value);
-    formData.append('products.item', this.fillQR.get('item').value);
-    formData.append('products.minPrice', this.fillQR.get('minprice').value);
-    formData.append('products.maxPrice', this.fillQR.get('maxprice').value);
-
-    console.log(formData);
-    console.log('working');
-
-    this._service.addProductFromRemote(formData).subscribe(
-      data => {
-        console.log('Respose received');
-        this.message = 'Price added successfully';
-       this.spinner.hide();
-        this._router.navigate(['/allprices']);
-      },
-      error => {
-        console.log('Exception occured');
-        this.message = 'Error';
-      }
-    );
-  }
+     addPrice() {
+      this.spinner.show();
+      this._service.addProductFromRemote(this.products).subscribe(
+        data => {
+          console.log('Respose received');
+          this.message = 'Price added successfully';
+          this.spinner.hide();
+          this._router.navigate(['/allprices']);
+        },
+        error => {
+          console.log('Exception occured');
+          this.message = 'Error';
+        }
+      );
+    }
 
   viewForm() {
     this.formDiv = true;
@@ -106,11 +95,12 @@ export class ScanqrComponent implements OnInit {
     console.log(cat);
     console.log(itm);
 
+    this.products.category = cat;
+    this.products.item = itm;
+
     this.fillQR = this.formBuilder.group({
       category: [cat, [Validators.required]],
-      item: [itm, [Validators.required]],
-      minprice: ['', [Validators.required]],
-      maxprice: ['', [Validators.required]]
+      item: [itm, [Validators.required]]
     });
 
     this.renderElement(element);
