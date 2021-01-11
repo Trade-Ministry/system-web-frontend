@@ -2,14 +2,21 @@
   <div class="card">
     <div class="card-header"><i class="icon-list"></i> All Price Details</div>
     <div class="card-body">
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text"
-            ><i class="cui-magnifying-glass"></i
-          ></span>
+      <table class="table">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"
+              ><i class="cui-magnifying-glass"></i
+            ></span>
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search by Category, Item, Date, Time or Price"
+            [(ngModel)]="term"
+          />
         </div>
-        <input type="text" class="form-control" placeholder="Search by Category, Item, Date, Time or Price" [(ngModel)]="term" />
-      </div>
+      </table>
       <table class="table">
         <thead>
           <tr>
