@@ -44,7 +44,6 @@ import { HomeComponent } from './views/home/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxSpinnerModule } from 'ngx-spinner';
-import { SearchByCategoryPipe } from './pipes/search-by-category.pipe';
 
 @NgModule({
   imports: [
@@ -71,8 +70,7 @@ import { SearchByCategoryPipe } from './pipes/search-by-category.pipe';
     P500Component,
     LoginComponent,
     RegisterComponent,
-    HomeComponent,
-    SearchByCategoryPipe
+    HomeComponent
   ],
   providers: [{
     provide: LocationStrategy,
