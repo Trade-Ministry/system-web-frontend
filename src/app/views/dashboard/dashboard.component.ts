@@ -142,7 +142,8 @@ export class DashboardComponent implements OnInit {
     this._service.getCategoriesFromRemote().subscribe(
       data => {
         console.log('Response Recieved: Category');
-        this._categorylist = data.map;
+        this._categorylist = data;
+        console.log('array', this._categorylist);
       },
       error => console.log('Error Occured: Category')
     );
